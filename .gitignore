@@ -1,0 +1,25 @@
+# Large EMIT scene files — download from NASA Earthdata
+data/emit/reflectance/*.img
+data/emit/sza/*.img
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.eggs/
+*.egg-info/
+
+# OS
+.DS_Store
+**/.DS_Store
+._*
+**/._*
+
+# IDEs
+.idea/
+.vscode/
+
+# Large spectral/ENVI data files
+*.img
+*.dat
+*.hdr
