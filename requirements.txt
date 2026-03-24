@@ -1,0 +1,8 @@
+numpy
+pandas
+scipy
+lmfit
+matplotlib
+spectral
+gdal
+psutil  # optional: used for memory-aware process count; falls back to cpu_count//2 if not installed
