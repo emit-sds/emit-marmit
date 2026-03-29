@@ -89,7 +89,7 @@ python "$SCRIPT_DIR/scripts/emit_retrieval/run_retrieval.py" \
     --optical_properties_file "$OPT_PROPS" \
     --solar_zenith_file       "$INPUT_SZA" \
     --output_folder           "$RETRIEVAL_DIR" \
-    --wavelength_ranges       "500-1320,1507-1766,2064-2300" \
+    --wavelength_ranges       "400-2400" \
     ${N_PROCESSES:+--n_processes $N_PROCESSES}
 
 # === Step 4: Plot spectral fits ===
