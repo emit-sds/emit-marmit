@@ -134,7 +134,6 @@ For SLURM cluster submission, use `run_emit_retrieval_cluster.sh` (submit from w
 | ε (wet fraction) | 0.001 – 1 | — | Fraction of pixel surface that is wet |
 | MEWT = L × ε | — | mm | Mean equivalent water thickness (input to calibration) |
 | Min SMAP coverage | 0.4 | — | Minimum fraction of valid EMIT sub-pixels per SMAP cell |
-| Wavelength ranges used | 500–1320, 1507–1766, 2064–2300 | nm | Excludes atmospheric water vapor absorption bands |
 
 ---
 
