@@ -236,4 +236,4 @@ If you use this code, please cite:
 
 ## Acknowledgments
 
-This work was carried out at the Jet Propulsion Laboratory, California Institute of Technology, under contract with NASA (80NM0018D0004). The EMIT mission is sponsored by the NASA Earth Science Division. Copyright 2025 California Institute of Technology. All Rights Reserved.
+This work was carried out at the Jet Propulsion Laboratory, California Institute of Technology, under contract with NASA (80NM0018D0004). The EMIT mission is sponsored by the NASA Earth Science Division. Copyright 2026 California Institute of Technology. All Rights Reserved.
