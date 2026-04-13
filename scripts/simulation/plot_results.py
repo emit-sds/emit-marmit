@@ -18,11 +18,11 @@ import os
 # ── Global style ──────────────────────────────────────────────────────────────
 mpl.rcParams.update({
     'font.family':        'sans-serif',
-    'axes.labelsize':     13,
-    'axes.titlesize':     13,
-    'xtick.labelsize':    11,
-    'ytick.labelsize':    11,
-    'legend.fontsize':    10,
+    'axes.labelsize':     14,
+    'axes.titlesize':     14,
+    'xtick.labelsize':    12,
+    'ytick.labelsize':    12,
+    'legend.fontsize':    11,
     'legend.framealpha':  0.8,
     'legend.edgecolor':   '0.8',
     'axes.spines.top':    False,
@@ -268,18 +268,18 @@ def plot_combined_2rows_5cols(results_df, samples, wl_valid, endmembers,
         ax_s.plot(lims, lims, 'k--', lw=1.0)
         ax_s.set_xlim(lims)
         ax_s.set_ylim(lims)
-        ax_s.set_xlabel('True MEWT (mm)', fontsize=8)
+        ax_s.set_xlabel('True MEWT (mm)', fontsize=11)
         ax_s.set_title(f'SNR = {label}', fontweight='bold',
-                       color=color, fontsize=10)
+                       color=color, fontsize=13)
         ax_s.text(0.97, 0.05,
                   f'MAE={mae_m:.3f}±{mae_s:.3f}'
                   f'\nNRMSE={nrmse_m:.3f}±{nrmse_s:.3f}'
                   f'\nR²={r2_m:.3f}±{r2_s:.3f}',
-                  transform=ax_s.transAxes, fontsize=6.5, va='bottom', ha='right',
+                  transform=ax_s.transAxes, fontsize=9, va='bottom', ha='right',
                   bbox=dict(boxstyle='round,pad=0.25', facecolor='white',
                             edgecolor='0.8', linewidth=0.6))
         if col == 0:
-            ax_s.set_ylabel('Retrieved MEWT (mm)', fontsize=8)
+            ax_s.set_ylabel('Retrieved MEWT (mm)', fontsize=11)
         else:
             ax_s.tick_params(labelleft=False)
 
@@ -287,7 +287,7 @@ def plot_combined_2rows_5cols(results_df, samples, wl_valid, endmembers,
         top_labels    = ['(A)', '(B)', '(C)', '(D)', '(E)']
         bottom_labels = ['(F)', '(G)', '(H)', '(I)', '(J)']
         ax_s.text(-0.10, 1.06, top_labels[col], transform=ax_s.transAxes,
-                  fontsize=11, fontweight='bold', va='bottom', ha='left')
+                  fontsize=14, fontweight='bold', va='bottom', ha='left')
 
         # ── Bottom row: spectral fits ─────────────────────────────────────
         ax_f = fig.add_subplot(gs[1, col])
@@ -316,19 +316,19 @@ def plot_combined_2rows_5cols(results_df, samples, wl_valid, endmembers,
                 ax_f.plot(wl_valid[mask], refl_pred[mask],
                           color=mc, lw=1.4, ls='--')
 
-        ax_f.set_xlabel('Wavelength (nm)', fontsize=8)
+        ax_f.set_xlabel('Wavelength (nm)', fontsize=11)
         if col == 0:
-            ax_f.set_ylabel('Reflectance', fontsize=8)
+            ax_f.set_ylabel('Reflectance', fontsize=11)
         else:
             ax_f.tick_params(labelleft=False)
         ax_f.text(-0.10, 1.04, bottom_labels[col], transform=ax_f.transAxes,
-                  fontsize=11, fontweight='bold', va='bottom', ha='left')
+                  fontsize=14, fontweight='bold', va='bottom', ha='left')
 
     # Row labels on the left margin
     fig.text(0.015, 0.74, 'Retrieval Scatter', va='center',
-             rotation='vertical', fontsize=10, fontweight='bold')
+             rotation='vertical', fontsize=13, fontweight='bold')
     fig.text(0.015, 0.30, 'Spectral Fits', va='center',
-             rotation='vertical', fontsize=10, fontweight='bold')
+             rotation='vertical', fontsize=13, fontweight='bold')
 
     # Shared legend for spectral fits below the figure
     legend_lines, legend_labels = [], []
@@ -344,7 +344,7 @@ def plot_combined_2rows_5cols(results_df, samples, wl_valid, endmembers,
 
     fig.legend(legend_lines, legend_labels,
                loc='lower center', ncol=len(legend_lines),
-               fontsize=7.5, framealpha=0.9, edgecolor='0.8',
+               fontsize=10, framealpha=0.9, edgecolor='0.8',
                bbox_to_anchor=(0.5, -0.04))
 
     plt.savefig(os.path.join(output_dir, 'combined_2rows_5cols.png'),
