@@ -92,6 +92,7 @@ bash run_noise_sensitivity.sh
 ```
 
 Outputs are saved to `output/simulation/noise_sensitivity/`.
+> **Note:** Because noise realizations are randomly sampled, exact metric values (MAE, NRMSE, R²) will vary slightly between runs. 
 
 ### Part 2 — EMIT Retrieval and SMAP Comparison
 
