@@ -105,9 +105,11 @@ def main(emit_path, smap_path, output_dir, min_coverage=0.4):
     for arr, name in [(emit_crop_masked, "Resampled EMIT"), (smap_crop_masked, "SMAP")]:
         plt.figure(figsize=(8, 6))
         plt.imshow(arr, cmap='viridis')
-        label = "Mean Equivalent Water Layer Thickness, \u03b5\u00d7L (mm)" if "EMIT" in name else "Soil Moisture Content (cm\u00b3/cm\u00b3)"
-        plt.colorbar(label=label)
-        plt.title(f"{name} - Pixels Used in Scatter Plot")
+        label = "EMIT Mean Equivalent Water Thickness (mm)" if "EMIT" in name else "SMAP Soil Moisture Content (cm\u00b3/cm\u00b3)"
+        label_fontsize = 15 if "EMIT" in name else 16
+        cbar = plt.colorbar()
+        cbar.set_label(label, fontsize=label_fontsize)
+        cbar.ax.tick_params(labelsize=14)
         plt.axis('off')
         plt.savefig(os.path.join(output_dir, f"{name.replace(' ', '_').lower()}_common_valid.png"),
                     dpi=300, bbox_inches='tight')
