@@ -86,7 +86,7 @@ for q_val in quantiles:
     unique_coords.append((x, y))
 
 # ------------- Create Output Folder -------------
-plot_dir = os.path.join(os.path.dirname(args.l_map), 'pixel_spectra_plots/low_midhigh')
+plot_dir = os.path.join(os.path.dirname(args.l_map), 'pixel_spectra_plots')
 os.makedirs(plot_dir, exist_ok=True)
 
 
@@ -149,8 +149,7 @@ def select_and_plot_epsL_pixels(epsL_map, measured_data, predicted_data, l_map_d
     ]
 
     # === Plot all spectra (measured & predicted) ===
-    range_folder = f"{min_epsL:.2f}_{max_epsL:.2f}".replace('.', 'p')
-    combined_plot_dir = os.path.join(base_output_dir, range_folder)
+    combined_plot_dir = base_output_dir
     os.makedirs(combined_plot_dir, exist_ok=True)
 
     individual_plot_dir = os.path.join(combined_plot_dir, "individual")
@@ -256,9 +255,7 @@ def select_and_plot_epsL_pixels(epsL_map, measured_data, predicted_data, l_map_d
 
 
 min_epsL, max_epsL = (0, 0.2)
-folder_name = f"epsL_{min_epsL:.2f}_to_{max_epsL:.2f}".replace('.', 'p')
-full_plot_dir = os.path.join(plot_dir, folder_name)
-os.makedirs(full_plot_dir, exist_ok=True)
+os.makedirs(plot_dir, exist_ok=True)
 
 select_and_plot_epsL_pixels(
     epsL_map=l_epsilon_map_data[:, :, 0],
@@ -272,5 +269,5 @@ select_and_plot_epsL_pixels(
     max_epsL=max_epsL,
     num_pixels=6,
     round_decimals=2,
-    base_output_dir=full_plot_dir
+    base_output_dir=plot_dir
 )
